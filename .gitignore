@@ -60,6 +60,7 @@ dkms.conf
 *.wim
 *.msi
 *.msp
+*.msu
 *.ref
 *.zip
 *.com
