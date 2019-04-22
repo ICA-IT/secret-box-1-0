@@ -1,0 +1,43 @@
+; Copyright (c) uib gmbh (www.uib.de)
+; This sourcecode is owned by uib gmbh
+; and published under the Terms of the General Public License.
+; credits: http://www.opsi.org/en/credits/
+
+[Actions]
+requiredWinstVersion >= "4.11.4.6"
+ScriptErrorMessages=off
+
+DefVar $MsiId$
+DefVar $UninstallProgram$
+DefVar $LogDir$
+DefVar $ExitCode$
+DefVar $ProductId$
+DefVar $InstallDir$
+DefVar $LicenseRequired$
+DefVar $LicensePool$
+DefVar $errcode$
+DefVar $testcode$
+
+
+Set $LogDir$ = "%opsiLogDir%"
+
+; ----------------------------------------------------------------
+; - Please edit the following values                             -
+; ----------------------------------------------------------------
+Set $ProductId$       = "secret-box-1-0"
+Set $InstallDir$      = "%ProgramFiles32Dir%\secretbox"
+Set $LicenseRequired$ = "false"
+Set $LicensePool$     = "p_" + $ProductId$
+; ----------------------------------------------------------------
+
+
+comment "Show product picture"
+ShowBitmap "%ScriptPath%\" + $ProductId$ + ".png" $ProductId$
+
+Message "Uninstalling " + $ProductId$ + " ..."
+
+if FileExists("%ScriptPath%\delsub32.opsiscript")
+	comment "Start uninstall sub section"
+	Sub "%ScriptPath%\delsub32.opsiscript"
+endif
+

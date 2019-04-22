@@ -1,0 +1,30 @@
+[Package]
+version: 1
+depends: 
+incremental: False
+
+[Product]
+type: localboot
+id: secret-box-1-0
+name: secret-box-1-0
+description: My Secret Box is a secure password storage utility developed by John Kuras
+advice: 
+
+version: 1.0
+priority: 0
+licenseRequired: False
+productClasses: 
+setupScript: setup32.opsiscript
+uninstallScript: uninstall32.opsiscript
+updateScript: 
+alwaysScript: 
+onceScript: 
+customScript: 
+userLoginScript: 
+
+[Changelog]
+secret-box-1-0 (1.0-1) stable; urgency=low
+
+Project created with opsi Package Builder 8.2.2
+
+ -- Package Maintainer <maintainer@server.local.net>  Wed, 14 Feb 2018 08:47:29 +0000
