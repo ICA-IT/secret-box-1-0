@@ -36,7 +36,7 @@ Set $LogDir$ = "%opsiLogDir%"
 ; therefore please: only lower letters, no umlauts, 
 ; no white space use '-' as a seperator
 Set $ProductId$       = "secret-box-1-0"
-Set $MinimumSpace$    = "8 MB"
+Set $MinimumSpace$    = "20 MB"
 ; the path were we find the product after the installation
 Set $InstallDir$      = "%ProgramFiles32Dir%\secretbox"
 Set $LicenseRequired$ = "false"
@@ -150,20 +150,6 @@ endif
  	working_dir: $InstallDir$
 ; 	icon_file: $InstallDir$\passwin.exe
 ; 	icon_index: 1
- end_link
-;
-; Example of creating an shortcut to the installed exe on AllUsers desktop:
-;
- set_basefolder common_desktopdirectory
- set_subfolder ""
-;
- set_link
- 	name: $ProductId$
- 	target: $InstallDir$\passwin.exe
-; 	parameters: <some_param>
- 	working_dir: $InstallDir$
-;	icon_file: $InstallDir$\passwin.exe
-; 	icon_index: 2
  end_link
 
 
