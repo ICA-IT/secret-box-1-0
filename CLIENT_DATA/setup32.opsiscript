@@ -81,9 +81,11 @@ else
 	comment "Copy files"
 	Files_install /32Bit
 	
-	
 	comment "Create shortcuts"
 	LinkFolder_install
+	
+	comment "Register log event handler"	
+	Registry_PathPatch
 	
 endif
 
@@ -205,4 +207,13 @@ End If
 Next
 wscript.Echo "KB917607 not found"
 WScript.Quit 0
+
+[Registry_PathPatch]
+openkey [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\passwinlog]
+set "CategoryCount"=REG_DWORD:3
+set "CategoryMessageFile"="$InstallDir$\passwinlog.dll"
+set "EventMessageFile"="$InstallDir$\passwinlog.dll"
+set "ParameterMessageFile"="$InstallDir$\passwinlog.dll"
+set "TypesSupported"=REG_DWORD:7
+
 

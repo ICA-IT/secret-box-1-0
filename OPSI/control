@@ -20,6 +20,12 @@ onceScript:
 customScript: 
 userLoginScript: 
 
+[ProductDependency]
+action: setup
+requiredProduct: ica-vc2019-runtime
+requiredStatus: installed
+requirementType: before
+
 [Changelog]
 secret-box-1-0 (1.0-1) stable; urgency=low
 
